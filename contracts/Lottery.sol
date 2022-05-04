@@ -23,6 +23,8 @@ contract Lottery {
         require(players.length > 0); //Must have players
         uint winnerId = random() % players.length;
         players[winnerId].transfer(this.balance);
+
+        players = new address[](0);
     }
 
 }
